@@ -93,7 +93,7 @@
     <div id="moreMsg" style="display:none; margin-top: 20px; color:#4caf50;">
       Aaj tumne wish kiya...<br>
       uske liye ek bar or thanks 💍✨
-        ❤️‍🩹I LOVE YOU ❤️‍🩹
+        ❤️❤️ I LOVE YOU ❤️❤️
     </div>
   </div>
 
