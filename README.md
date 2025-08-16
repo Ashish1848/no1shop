@@ -80,7 +80,7 @@
   <div class="screen" id="mainContent">
     <h1>Thank You, Cheeku 💕</h1>
     <p>
-      Tumhari wish ne mera birthday aur bhi khaas bana diya...<br>
+      Tumhari wish ne mera birthday ko aur bhi khaas bana diya...<br>
       Sach kahu toh, tum ho toh sab kuch perfect lagta hai 😇
     </p>
     <p>
