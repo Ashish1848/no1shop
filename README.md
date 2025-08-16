@@ -87,7 +87,7 @@
       Thank you kehna chhota lagega, lekin phir bhi...<br>
       Thank you for being mine 🫶
 
-      hor ha I LOVE YOU☺️   jada serious mat lena  ye frinds wala hai 😊
+      hor ha I LOVE YOU☺️   jada serious mat lena  ye Friendship wala hai 😊
     </p>
     <button onclick="showMore()">Click Again 😳</button>
     <div id="moreMsg" style="display:none; margin-top: 20px; color:#4caf50;">
