@@ -114,7 +114,7 @@
     <div id="qrBox">
       <p>इस QR को स्कैन करके UPI पेमेंट करें:</p>
       <!-- Google Chart API से QR कोड -->
-      <img id="qrImage"<a href="https://imgbb.com/"><img src="https://i.ibb.co/cc9btq3j/2222.jpg" alt="2222" border="0" /></a> alt="UPI QR Code" />
+      <a href="https://imgbb.com/"><img src="https://i.ibb.co/cc9btq3j/2222.jpg" alt="2222" border="0" /></a> 
     </div>
   </div>
 
