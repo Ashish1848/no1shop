@@ -74,7 +74,7 @@
 </head>
 <body>
   <div class="box">
-    <h2>भुगतान विकल्प</h2>
+    <h2>भुगतान विकल्प - राशि: ₹799</h2>
     <p>कृपया भुगतान का तरीका चुनें।</p>
 
     <div class="methods" role="radiogroup" aria-label="भुगतान विकल्प">
