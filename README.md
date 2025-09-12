@@ -90,23 +90,23 @@
 
       <label class="method">
         <input type="radio" name="payMethod" id="method-qr" value="qr">
-        <span>QR Code से पे</span>
+        <span>QR Code </span>
       </label>
     </div>
 
     <div id="upiAmountBox">
       <label for="amount">राशि (₹): </label>
-      <input id="amount" class="small-input" type="number" min="1" step="1" value="100" />
+      <input id="amount" class="small-input" type="number" min="1" step="1" value="799" />
     </div>
 
     <div class="amount-row">
       <div>अंतिम राशि:</div>
-      <div class="amount" id="finalAmount">₹100</div>
+      <div class="amount" id="finalAmount">₹799</div>
     </div>
 
     <!-- Payment button -->
     <a id="payButton" class="pay-btn"
-       href="upi://pay?pa=8816058313@upi&pn=Ashish%20Rajput&am=100&cu=INR">
+       href="upi://pay?pa=1848ashish@fam=Ashish%20Rajput&am=799&cu=INR">
        भुगतान करें
     </a>
 
@@ -114,7 +114,7 @@
     <div id="qrBox">
       <p>इस QR को स्कैन करके UPI पेमेंट करें:</p>
       <!-- Google Chart API से QR कोड -->
-      <img id="qrImage" src="" alt="UPI QR Code" />
+      <img id="qrImage" src="https://ibb.co/bgVHLtmk" alt="UPI QR Code" />
     </div>
   </div>
 
