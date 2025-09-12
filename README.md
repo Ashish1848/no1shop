@@ -18,7 +18,7 @@
     .box{
       background:#fff;
       width:100%;
-      max-width:420px;
+      max-width:440px;
       padding:22px;
       border-radius:12px;
       box-shadow:0 6px 18px rgba(20,20,50,0.08);
@@ -26,7 +26,7 @@
     }
     h2{ margin:0 0 10px; font-size:20px; color:#222; }
     p{ margin:6px 0 14px; color:#444; }
-    .methods { display:flex; gap:12px; margin-bottom:14px; }
+    .methods { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
     .method {
       display:flex; align-items:center; gap:8px;
       padding:8px 12px; border-radius:8px; cursor:pointer;
@@ -50,13 +50,23 @@
       font-weight:600;
       border:none;
       cursor:pointer;
+      background:#28a745; 
+      color:#fff;
     }
-    .upi { background:#28a745; color:#fff; border: none; }
-    .upi[disabled], .upi.disabled {
-      background:#bcd9c4; cursor:not-allowed;
-    }
-    .cod-btn { background:#007bff; color:#fff; }
     .small-input { width:120px; padding:8px; border-radius:6px; border:1px solid #ddd; }
+    #qrBox {
+      display:none;
+      text-align:center;
+      margin-top:15px;
+    }
+    #qrBox img {
+      width:200px;
+      height:200px;
+      border:1px solid #ccc;
+      padding:5px;
+      border-radius:8px;
+      background:#fff;
+    }
     @media(max-width:420px){
       .methods { flex-direction:column; }
     }
@@ -65,25 +75,28 @@
 <body>
   <div class="box">
     <h2>भुगतान विकल्प</h2>
-    <p>कृपया भुगतान का तरीका चुनें — यदि आप <strong>Cash on Delivery</strong> चुनते हैं तो राशि स्वतः ₹159 हो जाएगी।</p>
+    <p>कृपया भुगतान का तरीका चुनें।</p>
 
     <div class="methods" role="radiogroup" aria-label="भुगतान विकल्प">
-      <label class="method" title="UPI से भुगतान">
+      <label class="method">
         <input type="radio" name="payMethod" id="method-upi" value="upi" checked>
-        <span>UPI पे (PhonePe / GPay / Paytm)</span>
+        <span>UPI पे</span>
       </label>
 
-      <label class="method" title="Cash on Delivery">
+      <label class="method">
         <input type="radio" name="payMethod" id="method-cod" value="cod">
         <span>Cash on Delivery (COD)</span>
       </label>
+
+      <label class="method">
+        <input type="radio" name="payMethod" id="method-qr" value="qr">
+        <span>QR Code से पे</span>
+      </label>
     </div>
 
-    <div>
+    <div id="upiAmountBox">
       <label for="amount">राशि (₹): </label>
-      <!-- उपयोगकर्ता को राशि बदलने का ऑप्शन (UPI के लिए) -->
       <input id="amount" class="small-input" type="number" min="1" step="1" value="100" />
-      <div class="note">नोट: COD चुनने पर राशि स्वतः ₹159 हो जाएगी और UPI बटन डिसेबल रहेगा।</div>
     </div>
 
     <div class="amount-row">
@@ -91,35 +104,35 @@
       <div class="amount" id="finalAmount">₹100</div>
     </div>
 
-    <!-- UPI link button -->
-    <a id="upiButton" class="pay-btn upi"
-       href="upi://pay?pa=8816058313@upi&pn=Ashish%20Rajput&am=100&cu=INR"
-       rel="noopener noreferrer">
-      UPI से भुगतान करें (Open UPI app)
+    <!-- Payment button -->
+    <a id="payButton" class="pay-btn"
+       href="upi://pay?pa=8816058313@upi&pn=Ashish%20Rajput&am=100&cu=INR">
+       भुगतान करें
     </a>
 
-    <!-- COD proceed button -->
-    <button id="codButton" class="pay-btn cod-btn" style="display:none;">
-      COD पर ऑर्डर करें (₹159 पर)
-    </button>
-
-    <p class="note" id="statusMsg" style="display:none;"></p>
+    <!-- QR Code Box -->
+    <div id="qrBox">
+      <p>इस QR को स्कैन करके UPI पेमेंट करें:</p>
+      <!-- Google Chart API से QR कोड -->
+      <img id="qrImage" src="" alt="UPI QR Code" />
+    </div>
   </div>
 
   <script>
-    // UPI विवरण — अपनी ज़रूरत के मुताबिक बदल लें
     const UPI_ID = "8816058313@upi";
     const UPI_NAME = "Ashish Rajput";
 
     const methodUpi = document.getElementById("method-upi");
     const methodCod = document.getElementById("method-cod");
+    const methodQr = document.getElementById("method-qr");
     const amountInput = document.getElementById("amount");
     const finalAmountEl = document.getElementById("finalAmount");
-    const upiButton = document.getElementById("upiButton");
-    const codButton = document.getElementById("codButton");
-    const statusMsg = document.getElementById("statusMsg");
+    const payButton = document.getElementById("payButton");
+    const upiAmountBox = document.getElementById("upiAmountBox");
+    const qrBox = document.getElementById("qrBox");
+    const qrImage = document.getElementById("qrImage");
 
-    // Helper: UPI intent URL builder
+    // UPI लिंक बनाने का फ़ंक्शन
     function buildUpiHref(amount) {
       const pa = encodeURIComponent(UPI_ID);
       const pn = encodeURIComponent(UPI_NAME);
@@ -127,60 +140,43 @@
       return `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=INR`;
     }
 
-    // Update UI based on selected method and amount
-    function updateUI() {
-      const isCod = methodCod.checked;
-      let amount = Number(amountInput.value) || 0;
-
-      if (isCod) {
-        // जब COD चुना गया — राशि फिक्स 159
-        amount = 159;
-        amountInput.value = amount; // दिखाने के लिए भी सेट करें
-        finalAmountEl.textContent = "₹" + amount;
-        // Disable/grey-out UPI button
-        upiButton.setAttribute("aria-disabled", "true");
-        upiButton.classList.add("disabled");
-        upiButton.setAttribute("disabled", "true");
-        upiButton.href = "javascript:void(0);";
-        // Show COD button, hide UPI button
-        upiButton.style.display = "none";
-        codButton.style.display = "block";
-        statusMsg.style.display = "block";
-        statusMsg.textContent = "आपने Cash on Delivery चुना है — अंतिम राशि ₹159 होगी।";
-      } else {
-        // UPI चुना गया — user-controlled amount
-        // अगर user ने amount < 1 दिया तो 1 set करें
-        if (amount < 1) amount = 1;
-        finalAmountEl.textContent = "₹" + amount;
-        upiButton.href = buildUpiHref(amount);
-        upiButton.removeAttribute("disabled");
-        upiButton.classList.remove("disabled");
-        upiButton.style.display = "block";
-        codButton.style.display = "none";
-        statusMsg.style.display = "none";
-      }
+    // QR कोड URL बनाना
+    function buildQr(amount) {
+      const url = buildUpiHref(amount);
+      return `https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=${encodeURIComponent(url)}`;
     }
 
-    // Event listeners
+    function updateUI() {
+      let amount = Number(amountInput.value) || 0;
+
+      if (methodCod.checked) {
+        amount = 159; // COD पर fix
+        upiAmountBox.style.display = "none";
+        qrBox.style.display = "none";
+        payButton.style.display = "block";
+        payButton.href = buildUpiHref(amount);
+      } else if (methodUpi.checked) {
+        if (amount < 1) amount = 1;
+        upiAmountBox.style.display = "block";
+        qrBox.style.display = "none";
+        payButton.style.display = "block";
+        payButton.href = buildUpiHref(amount);
+      } else if (methodQr.checked) {
+        if (amount < 1) amount = 1;
+        upiAmountBox.style.display = "block";
+        qrBox.style.display = "block";
+        payButton.style.display = "none";
+        qrImage.src = buildQr(amount);
+      }
+
+      finalAmountEl.textContent = "₹" + amount;
+    }
+
     methodUpi.addEventListener("change", updateUI);
     methodCod.addEventListener("change", updateUI);
-    amountInput.addEventListener("input", function(){
-      // अगर COD selected है, amount input override कर देंगे
-      if(methodCod.checked){
-        amountInput.value = 159;
-      }
-      updateUI();
-    });
+    methodQr.addEventListener("change", updateUI);
+    amountInput.addEventListener("input", updateUI);
 
-    // COD button - यह अभी सिर्फ UI के लिए है, आप यहाँ order submission का ajax जोड़ सकते हैं
-    codButton.addEventListener("click", function(){
-      // यहाँ आप अपना ऑर्डर सबमिट करने वाली request भेज सकते हैं
-      // अभी बस confirmation दिखा रहा हूँ
-      alert("धन्यवाद! आपका ऑर्डर COD (₹159) पर लिया गया है। हम शीघ्र संपर्क करेंगे।");
-      // अगर चाहें तो यहां redirect या फॉर्म सबमिट करें
-    });
-
-    // Initialize UI on page load
     updateUI();
   </script>
 </body>
