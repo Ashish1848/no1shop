@@ -166,32 +166,15 @@
     
     <!-- यहां अपना असली UPI ID और राशि डालें -->
     <a class="pay-btn" 
-       href="upi://pay?pa=8816058313@upi&pn=Ashish%20Rajput&am=100&cu=INR">
-       ₹100 भुगतान करें
+       href="upi://pay?pa=1848ashish@fam=Ashish%20Rajput&am=100&cu=INR">
+       ₹159 भुगतान करें
     </a>
   </div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-    <br>
-
-    <button onclick="confirmPayment()">मैंने भुगतान कर दिया</button>
-
-    <p class="success" id="successMsg">भुगतान करें</p>
-
-    <div id="userDetails"></div>
-  </div>
+   
 
   <script>
     // LocalStorage से यूज़र की जानकारी पढ़ना
