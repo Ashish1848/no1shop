@@ -1,216 +1,187 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <title>भुगतान करें</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    body { 
-      text-align: center; 
-      font-family: sans-serif; 
-      background: #f8f8f8; 
-      padding: 30px; 
+    body {
+      font-family: "Noto Sans", Arial, sans-serif;
+      background:#f6f7fb;
+      margin:0;
+      padding:30px 15px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
     }
-    .box {
-      background: white;
-      padding: 20px;
-      margin: 0 auto;
-      max-width: 500px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .box{
+      background:#fff;
+      width:100%;
+      max-width:420px;
+      padding:22px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(20,20,50,0.08);
+      text-align:left;
     }
-    img {
-      width: 300px;
-      margin: 20px 0;
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 10px;
+    h2{ margin:0 0 10px; font-size:20px; color:#222; }
+    p{ margin:6px 0 14px; color:#444; }
+    .methods { display:flex; gap:12px; margin-bottom:14px; }
+    .method {
+      display:flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:8px; cursor:pointer;
+      border:1px solid #e6e9ef;
     }
-    button {
-      padding: 10px 20px;
-      background: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
+    .method input { transform:scale(1.1); }
+    .amount-row { display:flex; align-items:center; justify-content:space-between; margin-top:12px; }
+    .amount {
+      font-size:22px; font-weight:700; color:#111;
     }
-    .success {
-      color: green;
-      margin-top: 20px;
-      font-weight: bold;
-      display: none;
-    }
-    hr {
-      margin: 20px 0;
-    }
-    #userDetails p {
-      text-align: left;
-      margin-left: 30px;
-    }
-    #codNote {
-      display: none;
-      margin-top: 15px;
-      background: #fff3cd;
-      padding: 10px;
-      border: 1px solid #ffeeba;
-      border-radius: 5px;
-      color: #856404;
-    }
-    .payment-options {
-      margin-top: 20px;
-      text-align: left;
-    }
-    .payment-options label {
-      display: block;
-      margin: 10px 0;
-      font-size: 16px;
-    }
-
-    @media(max-width: 600px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-      .payment-options {
-        text-align: center;
-      }
-      #userDetails p {
-        margin-left: 0;
-        text-align: center;
-      }
-    }
-
-
-
-
- body { 
-      text-align: center; 
-      font-family: sans-serif; 
-      background: #f8f8f8; 
-      padding: 30px; 
-    }
-    .box {
-      background: white;
-      padding: 20px;
-      margin: 0 auto;
-      max-width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 { color: #333; }
+    .note { font-size:13px; color:#666; margin-top:10px; }
     .pay-btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #4CAF50;
-      color: #fff;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 20px;
-      transition: 0.3s;
+      display:block;
+      width:100%;
+      text-align:center;
+      padding:12px 14px;
+      margin-top:18px;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:16px;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
     }
-    .pay-btn:hover {
-      background: #45a049;
+    .upi { background:#28a745; color:#fff; border: none; }
+    .upi[disabled], .upi.disabled {
+      background:#bcd9c4; cursor:not-allowed;
     }
-
-
-
-
-
-
-
-
-
+    .cod-btn { background:#007bff; color:#fff; }
+    .small-input { width:120px; padding:8px; border-radius:6px; border:1px solid #ddd; }
+    @media(max-width:420px){
+      .methods { flex-direction:column; }
+    }
   </style>
 </head>
 <body>
-
   <div class="box">
-    <h2>QR कोड स्कैन करें और भुगतान करें</h2>
-    <p><strong>राशि:</strong> ₹799</p>
-    <a href="https://ibb.co/bgVHLtmk"><img src="https://i.ibb.co/cc9btq3j/2222.jpg" alt="2222" border="0"></a>
-    <p>UPI (GPay, PhonePe, Paytm) </p>
-    <p><strong>UPI ID:</strong> <span style="color:green;">1848ashish@fam</span></p>
+    <h2>भुगतान विकल्प</h2>
+    <p>कृपया भुगतान का तरीका चुनें — यदि आप <strong>Cash on Delivery</strong> चुनते हैं तो राशि स्वतः ₹159 हो जाएगी।</p>
 
-    <br>
-
-    <div class="payment-options">
-      <h3>भुगतान का तरीका चुनें:</h3>
-      <label>
-        <input type="radio" name="paymentMethod" value="online" checked> ऑनलाइन पेमेंट
-      </label>
-      <label>
-        <input type="radio" name="paymentMethod" value="cod"> कैश ऑन डिलीवरी (COD)
+    <div class="methods" role="radiogroup" aria-label="भुगतान विकल्प">
+      <label class="method" title="UPI से भुगतान">
+        <input type="radio" name="payMethod" id="method-upi" value="upi" checked>
+        <span>UPI पे (PhonePe / GPay / Paytm)</span>
       </label>
 
-      <div id="codNote">
-        <strong>नोट:</strong> कैश ऑन डिलीवरी पर <span style="color:red;">20%</span> एडवांस पेमेंट अनिवार्य है।
-      </div>
+      <label class="method" title="Cash on Delivery">
+        <input type="radio" name="payMethod" id="method-cod" value="cod">
+        <span>Cash on Delivery (COD)</span>
+      </label>
     </div>
 
-    <br>
+    <div>
+      <label for="amount">राशि (₹): </label>
+      <!-- उपयोगकर्ता को राशि बदलने का ऑप्शन (UPI के लिए) -->
+      <input id="amount" class="small-input" type="number" min="1" step="1" value="100" />
+      <div class="note">नोट: COD चुनने पर राशि स्वतः ₹159 हो जाएगी और UPI बटन डिसेबल रहेगा।</div>
+    </div>
 
+    <div class="amount-row">
+      <div>अंतिम राशि:</div>
+      <div class="amount" id="finalAmount">₹100</div>
+    </div>
 
-
-
-
-
-
-<div class="box">
-    <h2>UPI से भुगतान करें</h2>
-    <p>भुगतान करने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
-    
-    <!-- यहां अपना असली UPI ID और राशि डालें -->
-    <a class="pay-btn" 
-       href="upi://pay?pa=1848ashish@fam=Ashish%20Rajput&am=100&cu=INR">
-       ₹159 भुगतान करें
+    <!-- UPI link button -->
+    <a id="upiButton" class="pay-btn upi"
+       href="upi://pay?pa=8816058313@upi&pn=Ashish%20Rajput&am=100&cu=INR"
+       rel="noopener noreferrer">
+      UPI से भुगतान करें (Open UPI app)
     </a>
+
+    <!-- COD proceed button -->
+    <button id="codButton" class="pay-btn cod-btn" style="display:none;">
+      COD पर ऑर्डर करें (₹159 पर)
+    </button>
+
+    <p class="note" id="statusMsg" style="display:none;"></p>
   </div>
 
-
-
-
-   
-
   <script>
-    // LocalStorage से यूज़र की जानकारी पढ़ना
-    const user = JSON.parse(localStorage.getItem("userData"));
-    if (user) {
-      document.getElementById("userDetails").innerHTML = `
-        <hr>
-        <h3>आपकी जानकारी:</h3>
-        <p><strong>नाम:</strong> ${user.name}</p>
-        <p><strong>फोन:</strong> ${user.phone}</p>
-        <p><strong>प्रोफेशन:</strong> ${user.profession}</p>
-        <p><strong>पता:</strong> ${user.address}</p>
-      `;
+    // UPI विवरण — अपनी ज़रूरत के मुताबिक बदल लें
+    const UPI_ID = "8816058313@upi";
+    const UPI_NAME = "Ashish Rajput";
+
+    const methodUpi = document.getElementById("method-upi");
+    const methodCod = document.getElementById("method-cod");
+    const amountInput = document.getElementById("amount");
+    const finalAmountEl = document.getElementById("finalAmount");
+    const upiButton = document.getElementById("upiButton");
+    const codButton = document.getElementById("codButton");
+    const statusMsg = document.getElementById("statusMsg");
+
+    // Helper: UPI intent URL builder
+    function buildUpiHref(amount) {
+      const pa = encodeURIComponent(UPI_ID);
+      const pn = encodeURIComponent(UPI_NAME);
+      const am = encodeURIComponent(String(amount));
+      return `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=INR`;
     }
 
-    // COD Note Toggle
-    const paymentRadios = document.getElementsByName("paymentMethod");
-    const codNote = document.getElementById("codNote");
+    // Update UI based on selected method and amount
+    function updateUI() {
+      const isCod = methodCod.checked;
+      let amount = Number(amountInput.value) || 0;
 
-    for (let radio of paymentRadios) {
-      radio.addEventListener("change", function () {
-        if (this.value === "cod") {
-          codNote.style.display = "block";
-        } else {
-          codNote.style.display = "none";
-        }
-      });
+      if (isCod) {
+        // जब COD चुना गया — राशि फिक्स 159
+        amount = 159;
+        amountInput.value = amount; // दिखाने के लिए भी सेट करें
+        finalAmountEl.textContent = "₹" + amount;
+        // Disable/grey-out UPI button
+        upiButton.setAttribute("aria-disabled", "true");
+        upiButton.classList.add("disabled");
+        upiButton.setAttribute("disabled", "true");
+        upiButton.href = "javascript:void(0);";
+        // Show COD button, hide UPI button
+        upiButton.style.display = "none";
+        codButton.style.display = "block";
+        statusMsg.style.display = "block";
+        statusMsg.textContent = "आपने Cash on Delivery चुना है — अंतिम राशि ₹159 होगी।";
+      } else {
+        // UPI चुना गया — user-controlled amount
+        // अगर user ने amount < 1 दिया तो 1 set करें
+        if (amount < 1) amount = 1;
+        finalAmountEl.textContent = "₹" + amount;
+        upiButton.href = buildUpiHref(amount);
+        upiButton.removeAttribute("disabled");
+        upiButton.classList.remove("disabled");
+        upiButton.style.display = "block";
+        codButton.style.display = "none";
+        statusMsg.style.display = "none";
+      }
     }
 
-    function confirmPayment() {
-      document.getElementById("successMsg").style.display = "block";
-      console.log("User Data Sent:", user);
-      // Redirect example:
-      // setTimeout(() => { window.location.href = "thankyou.html"; }, 3000);
-    }
+    // Event listeners
+    methodUpi.addEventListener("change", updateUI);
+    methodCod.addEventListener("change", updateUI);
+    amountInput.addEventListener("input", function(){
+      // अगर COD selected है, amount input override कर देंगे
+      if(methodCod.checked){
+        amountInput.value = 159;
+      }
+      updateUI();
+    });
+
+    // COD button - यह अभी सिर्फ UI के लिए है, आप यहाँ order submission का ajax जोड़ सकते हैं
+    codButton.addEventListener("click", function(){
+      // यहाँ आप अपना ऑर्डर सबमिट करने वाली request भेज सकते हैं
+      // अभी बस confirmation दिखा रहा हूँ
+      alert("धन्यवाद! आपका ऑर्डर COD (₹159) पर लिया गया है। हम शीघ्र संपर्क करेंगे।");
+      // अगर चाहें तो यहां redirect या फॉर्म सबमिट करें
+    });
+
+    // Initialize UI on page load
+    updateUI();
   </script>
-
 </body>
 </html>
