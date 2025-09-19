@@ -50,14 +50,19 @@
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 16px;
-      max-width: 500px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 20px;
     }
-    .offer-box img {
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .images img {
       width: 100%;
       border-radius: 12px;
-      margin-bottom: 12px;
     }
     .price {
       font-size: 24px;
@@ -80,6 +85,23 @@
       border-radius: 10px;
       text-decoration: none;
     }
+    section.policies {
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: left;
+      padding: 20px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+    }
+    section.policies h3 {
+      color: #ffda79;
+      margin-top: 0;
+    }
+    section.policies p {
+      font-size: 15px;
+      color: #ccc;
+      line-height: 1.6;
+    }
     footer {
       margin-top: 30px;
       padding: 16px;
@@ -99,14 +121,31 @@
     <h2>🎇 दिवाली स्पेशल ड्रोन ऑफ़र 🎇</h2>
     <p>इस दिवाली, पाएं WIN ड्रोन पर शानदार छूट! COD पर ₹159 का अतिरिक्त डिस्काउंट और फास्ट डिलीवरी।</p>
 
+    <div class="offer-box">
+      <div class="images">
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop" alt="Drone 1">
+        <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=800&auto=format&fit=crop" alt="Drone 2">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop" alt="Drone 3">
+        <img src="https://images.unsplash.com/photo-1511452885604-5b0b58e3d9d9?q=80&w=800&auto=format&fit=crop" alt="Drone 4">
+      </div>
+      <div class="price">₹6,499 <span class="old-price">₹8,499</span></div>
+      <p style="color:#ccc;font-size:14px;margin:8px 0;">COD पर ऑर्डर करें और ₹159 का डिस्काउंट पाएं। सीमित स्टॉक!</p>
+      <a class="btn" href="order.html">अभी खरीदें</a>
+    </div>
+  </section>
 
-<div class="offer-box">
-    <a href="https://ibb.co/93c6WW3s"><img src="https://i.ibb.co/wrBV44rM/41.jpg" alt="41" border="0" /></a>
-  <div class="price">₹6,499 <span class="old-price">₹8,499</span></div>
-  <p style="color:#ccc;font-size:14px;margin:8px 0;">COD पर ऑर्डर करें और ₹159 का डिस्काउंट पाएं। सीमित स्टॉक!</p>
-  <a class="btn" href="order.html">अभी खरीदें</a>
-</div>
+  <section class="policies">
+    <h3>📦 COD पॉलिसी</h3>
+    <p>Cash on Delivery (COD) उपलब्ध है। COD पर ऑर्डर करने पर आपको ₹159 का अतिरिक्त डिस्काउंट मिलेगा।</p>
 
+    <h3>🔄 रिटर्न पॉलिसी</h3>
+    <p>आपको प्रोडक्ट डिलीवरी के 7 दिनों के भीतर रिटर्न/एक्सचेंज की सुविधा मिलेगी। ड्रोन ओपन/डैमेज होने पर रिटर्न मान्य नहीं होगा।</p>
+
+    <h3>🛡 वारंटी</h3>
+    <p>सभी ड्रोन पर 2 साल की वारंटी दी जाती है। किसी भी टेक्निकल समस्या पर रिपेयर/रिप्लेसमेंट सुविधा उपलब्ध है।</p>
+
+    <h3>🚚 शिपिंग पॉलिसी</h3>
+    <p>ऑर्डर कन्फर्म होने के 2-5 कार्य दिवसों में प्रोडक्ट शिप कर दिया जाएगा। ट्रैकिंग डिटेल्स WhatsApp/ईमेल पर भेजी जाएंगी।</p>
   </section>
 
   <footer>
