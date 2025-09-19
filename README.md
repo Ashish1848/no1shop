@@ -124,8 +124,8 @@
     <div class="offer-box">
       <div class="images">
         <a href="https://ibb.co/93c6WW3s"><img src="https://i.ibb.co/wrBV44rM/41.jpg" alt="41" border="0" /></a>
-        <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=800&auto=format&fit=crop" alt="Drone 2">
-        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop" alt="Drone 3">
+        <a href="https://ibb.co/CKdCJGWP"><img src="https://i.ibb.co/F4vZsTnH/image.jpg" alt="image" border="0"></a>
+     <a href="https://ibb.co/5N9SkWd"><img src="https://i.ibb.co/RxSsNp1/IMG-20250919-WA0002.jpg" alt="IMG-20250919-WA0002" border="0"></a>
         <img src="https://images.unsplash.com/photo-1511452885604-5b0b58e3d9d9?q=80&w=800&auto=format&fit=crop" alt="Drone 4">
       </div>
       <div class="price">₹6,499 <span class="old-price">₹8,499</span></div>
