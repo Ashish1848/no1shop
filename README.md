@@ -3,153 +3,94 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ATYT — दिवाली ड्रोन ऑफर</title>
+  <title>ऑर्डर करें</title>
   <style>
     body {
-      margin:0;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(180deg, #0f0f2d 0%, #1a1a40 100%);
-      color: #fff;
-      text-align: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff8e7 url('https://png.pngtree.com/thumb_back/fw800/background/20231004/pngtree-diwali-festival-background-lamp-image_13563392.png') no-repeat center top;
+      background-size: cover;
+      color: #333;
     }
     header {
-      padding: 16px;
-      background: #111;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #ff6f00;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
     }
-    header h1 {
-      margin: 0;
-      font-size: 20px;
-      color: #ffb703;
-    }
-    .whatsapp {
-      background:#25D366;
-      padding:8px 14px;
-      border-radius:6px;
-      color:#042;
-      font-weight:600;
-      text-decoration:none;
-    }
-    .hero {
-      padding: 40px 20px;
-    }
-    .hero h2 {
-      font-size: 34px;
-      margin-bottom: 12px;
-      color: #ffda79;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #ccc;
-      max-width: 600px;
-      margin: 0 auto 20px;
-    }
-    .offer-box {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px;
-      max-width: 800px;
-      margin: 0 auto;
+    .container {
+      max-width: 450px;
+      margin: 40px auto;
       padding: 20px;
-    }
-    .images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .images img {
-      width: 100%;
+      background: rgba(255,255,255,0.9);
       border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .price {
-      font-size: 24px;
-      font-weight: 700;
-      color: #ffb703;
+    h2 {
+      text-align: center;
+      color: #d84315;
+      margin-bottom: 20px;
     }
-    .old-price {
-      text-decoration: line-through;
-      font-size: 16px;
-      color: #aaa;
-      margin-left: 8px;
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 12px;
+      color: #444;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
     }
     .btn {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 12px 20px;
-      background: #ffb703;
-      color: #111;
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background: #ff6f00;
+      color: #fff;
+      font-size: 16px;
       font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
-    section.policies {
-      margin: 40px auto;
-      max-width: 800px;
-      text-align: left;
-      padding: 20px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 12px;
-    }
-    section.policies h3 {
-      color: #ffda79;
-      margin-top: 0;
-    }
-    section.policies p {
-      font-size: 15px;
-      color: #ccc;
-      line-height: 1.6;
+    .btn:hover {
+      background: #e65100;
     }
     footer {
+      text-align: center;
       margin-top: 30px;
-      padding: 16px;
       font-size: 14px;
-      color: #aaa;
-      border-top: 1px dashed rgba(255,255,255,0.2);
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>WIN - ATYT</h1>
-    <a class="whatsapp" href="https://wa.me/918816058313" target="_blank">WhatsApp सपोर्ट</a>
-  </header>
+  <header>🎇 WIN Drone दिवाली ऑफ़र 🎇</header>
 
-  <section class="hero">
-    <h2>🎇 दिवाली स्पेशल ड्रोन ऑफ़र 🎇</h2>
-    <p>इस दिवाली, पाएं WIN ड्रोन पर शानदार छूट! COD पर ₹159 का अतिरिक्त डिस्काउंट और फास्ट डिलीवरी।</p>
+  <div class="container">
+    <h2>ऑर्डर फॉर्म ✨</h2>
+    <form>
+      <label>नाम</label>
+      <input type="text" placeholder="अपना नाम लिखें" required>
 
-    <div class="offer-box">
-      <div class="images">
-        <a href="https://ibb.co/93c6WW3s"><img src="https://i.ibb.co/wrBV44rM/41.jpg" alt="41" border="0" /></a>
-        <a href="https://ibb.co/CKdCJGWP"><img src="https://i.ibb.co/F4vZsTnH/image.jpg" alt="image" border="0"></a>
-     <a href="https://ibb.co/5N9SkWd"><img src="https://i.ibb.co/RxSsNp1/IMG-20250919-WA0002.jpg" alt="IMG-20250919-WA0002" border="0"></a>
-        <img src="https://images.unsplash.com/photo-1511452885604-5b0b58e3d9d9?q=80&w=800&auto=format&fit=crop" alt="Drone 4">
-      </div>
-      <div class="price">₹6,499 <span class="old-price">₹8,499</span></div>
-      <p style="color:#ccc;font-size:14px;margin:8px 0;">COD पर ऑर्डर करें और ₹159 का डिस्काउंट पाएं। सीमित स्टॉक!</p>
-      <a class="btn" href="order.html">अभी खरीदें</a>
-    </div>
-  </section>
+      <label>मोबाइल नंबर</label>
+      <input type="tel" placeholder="10 अंकों का मोबाइल नंबर" required>
 
-  <section class="policies">
-    <h3>📦 COD पॉलिसी</h3>
-    <p>Cash on Delivery (COD) उपलब्ध है। COD पर ऑर्डर करने पर आपको ₹159 का अतिरिक्त डिस्काउंट मिलेगा।</p>
+      <label>पता</label>
+      <textarea rows="3" placeholder="पूरा पता लिखें" required></textarea>
 
-    <h3>🔄 रिटर्न पॉलिसी</h3>
-    <p>आपको प्रोडक्ट डिलीवरी के 7 दिनों के भीतर रिटर्न/एक्सचेंज की सुविधा मिलेगी। ड्रोन ओपन/डैमेज होने पर रिटर्न मान्य नहीं होगा।</p>
+      <button type="submit" class="btn">✨ ऑर्डर कन्फर्म करें ✨</button>
+    </form>
+  </div>
 
-    <h3>🛡 वारंटी</h3>
-    <p>सभी ड्रोन पर 2 साल की वारंटी दी जाती है। किसी भी टेक्निकल समस्या पर रिपेयर/रिप्लेसमेंट सुविधा उपलब्ध है।</p>
-
-    <h3>🚚 शिपिंग पॉलिसी</h3>
-    <p>ऑर्डर कन्फर्म होने के 2-5 कार्य दिवसों में प्रोडक्ट शिप कर दिया जाएगा। ट्रैकिंग डिटेल्स WhatsApp/ईमेल पर भेजी जाएंगी।</p>
-  </section>
-
-  <footer>
-    © 2025 WIN • सपोर्ट: <a href="https://wa.me/918816058313" style="color:inherit">8816058313</a>
-  </footer>
+  <footer>© 2025 WIN • सपोर्ट: 8816058313</footer>
 </body>
 </html>
