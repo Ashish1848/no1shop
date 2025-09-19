@@ -104,7 +104,7 @@
     <a href="https://ibb.co/93c6WW3s"><img src="https://i.ibb.co/wrBV44rM/41.jpg" alt="41" border="0" /></a>
   <div class="price">₹6,499 <span class="old-price">₹8,499</span></div>
   <p style="color:#ccc;font-size:14px;margin:8px 0;">COD पर ऑर्डर करें और ₹159 का डिस्काउंट पाएं। सीमित स्टॉक!</p>
-  <a class="btn" https://rajput1848.github.io/atyt/order.html">अभी खरीदें</a>
+  <a class="btn" href="order.html">अभी खरीदें</a>
 </div>
 
   </section>
