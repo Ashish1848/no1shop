@@ -1,183 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="utf-8" />
-  <title>भुगतान करें</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATYT — दिवाली ड्रोन ऑफर</title>
   <style>
     body {
-      font-family: "Noto Sans", Arial, sans-serif;
-      background:#f6f7fb;
       margin:0;
-      padding:30px 15px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, #0f0f2d 0%, #1a1a40 100%);
+      color: #fff;
+      text-align: center;
     }
-    .box{
-      background:#fff;
-      width:100%;
-      max-width:440px;
-      padding:22px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(20,20,50,0.08);
-      text-align:left;
+    header {
+      padding: 16px;
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    h2{ margin:0 0 10px; font-size:20px; color:#222; }
-    p{ margin:6px 0 14px; color:#444; }
-    .methods { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
-    .method {
-      display:flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:8px; cursor:pointer;
-      border:1px solid #e6e9ef;
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+      color: #ffb703;
     }
-    .method input { transform:scale(1.1); }
-    .amount-row { display:flex; align-items:center; justify-content:space-between; margin-top:12px; }
-    .amount {
-      font-size:22px; font-weight:700; color:#111;
-    }
-    .note { font-size:13px; color:#666; margin-top:10px; }
-    .pay-btn {
-      display:block;
-      width:100%;
-      text-align:center;
-      padding:12px 14px;
-      margin-top:18px;
-      border-radius:8px;
-      text-decoration:none;
-      font-size:16px;
+    .whatsapp {
+      background:#25D366;
+      padding:8px 14px;
+      border-radius:6px;
+      color:#042;
       font-weight:600;
-      border:none;
-      cursor:pointer;
-      background:#28a745; 
-      color:#fff;
+      text-decoration:none;
     }
-    .small-input { width:120px; padding:8px; border-radius:6px; border:1px solid #ddd; }
-    #qrBox {
-      display:none;
-      text-align:center;
-      margin-top:15px;
+    .hero {
+      padding: 40px 20px;
     }
-    #qrBox img {
-      width:200px;
-      height:200px;
-      border:1px solid #ccc;
-      padding:5px;
-      border-radius:8px;
-      background:#fff;
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+      color: #ffda79;
     }
-    @media(max-width:420px){
-      .methods { flex-direction:column; }
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+    .offer-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .offer-box img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffb703;
+    }
+    .old-price {
+      text-decoration: line-through;
+      font-size: 16px;
+      color: #aaa;
+      margin-left: 8px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 20px;
+      background: #ffb703;
+      color: #111;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    footer {
+      margin-top: 30px;
+      padding: 16px;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 1px dashed rgba(255,255,255,0.2);
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>भुगतान विकल्प - राशि: ₹799</h2>
-    <p>कृपया भुगतान का तरीका चुनें।</p>
+  <header>
+    <h1>WIN - ATYT</h1>
+    <a class="whatsapp" href="https://wa.me/918816058313" target="_blank">WhatsApp सपोर्ट</a>
+  </header>
 
-    <div class="methods" role="radiogroup" aria-label="भुगतान विकल्प">
-      <label class="method">
-        <input type="radio" name="payMethod" id="method-upi" value="upi" checked>
-        <span>UPI पे</span>
-      </label>
+  <section class="hero">
+    <h2>🎇 दिवाली स्पेशल ड्रोन ऑफ़र 🎇</h2>
+    <p>इस दिवाली, पाएं WIN ड्रोन पर शानदार छूट! COD पर ₹159 का अतिरिक्त डिस्काउंट और फास्ट डिलीवरी।</p>
 
-      <label class="method">
-        <input type="radio" name="payMethod" id="method-cod" value="cod">
-        <span>Cash on Delivery (COD)</span>
-      </label>
-
-      <label class="method">
-        <input type="radio" name="payMethod" id="method-qr" value="qr">
-        <span>QR Code </span>
-      </label>
+    <div class="offer-box">
+      <a href="https://ibb.co/93c6WW3s"><img src="https://i.ibb.co/wrBV44rM/41.jpg" alt="41" border="0" /></a>
+      <div class="price">₹6,499 <span class="old-price">₹8,499</span></div>
+      <p style="color:#ccc;font-size:14px;margin:8px 0;">COD पर ऑर्डर करें और ₹159 का डिस्काउंट पाएं। सीमित स्टॉक!</p>
+      <a class="btn" href="payment.html">अभी खरीदें</a>
     </div>
+  </section>
 
-    <div id="upiAmountBox">
-      <label for="amount">राशि (₹): </label>
-      <input id="amount" class="small-input" type="number" min="1" step="1" value="799" />
-    </div>
-
-    <div class="amount-row">
-      <div>अंतिम राशि:</div>
-      <div class="amount" id="finalAmount">₹799</div>
-    </div>
-
-    <!-- Payment button -->
-    <a id="payButton" class="pay-btn"
-       href="upi://pay?pa=1848ashish@fam=Ashish%20Rajput&am=799&cu=INR">
-       भुगतान करें
-    </a>
-
-    <!-- QR Code Box -->
-    <div id="qrBox">
-      <p>इस QR को स्कैन करके UPI पेमेंट करें:</p>
-      <!-- Google Chart API से QR कोड -->
-      <a href="https://imgbb.com/"><img src="https://i.ibb.co/cc9btq3j/2222.jpg" alt="2222" border="0" /></a> 
-    </div>
-  </div>
-
-  <script>
-    const UPI_ID = "8816058313@upi";
-    const UPI_NAME = "Ashish Rajput";
-
-    const methodUpi = document.getElementById("method-upi");
-    const methodCod = document.getElementById("method-cod");
-    const methodQr = document.getElementById("method-qr");
-    const amountInput = document.getElementById("amount");
-    const finalAmountEl = document.getElementById("finalAmount");
-    const payButton = document.getElementById("payButton");
-    const upiAmountBox = document.getElementById("upiAmountBox");
-    const qrBox = document.getElementById("qrBox");
-    const qrImage = document.getElementById("qrImage");
-
-    // UPI लिंक बनाने का फ़ंक्शन
-    function buildUpiHref(amount) {
-      const pa = encodeURIComponent(UPI_ID);
-      const pn = encodeURIComponent(UPI_NAME);
-      const am = encodeURIComponent(String(amount));
-      return `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=INR`;
-    }
-
-    // QR कोड URL बनाना
-    function buildQr(amount) {
-      const url = buildUpiHref(amount);
-      return `https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=${encodeURIComponent(url)}`;
-    }
-
-    function updateUI() {
-      let amount = Number(amountInput.value) || 0;
-
-      if (methodCod.checked) {
-        amount = 159; // COD पर fix
-        upiAmountBox.style.display = "none";
-        qrBox.style.display = "none";
-        payButton.style.display = "block";
-        payButton.href = buildUpiHref(amount);
-      } else if (methodUpi.checked) {
-        if (amount < 1) amount = 1;
-        upiAmountBox.style.display = "block";
-        qrBox.style.display = "none";
-        payButton.style.display = "block";
-        payButton.href = buildUpiHref(amount);
-      } else if (methodQr.checked) {
-        if (amount < 1) amount = 1;
-        upiAmountBox.style.display = "block";
-        qrBox.style.display = "block";
-        payButton.style.display = "none";
-        qrImage.src = buildQr(amount);
-      }
-
-      finalAmountEl.textContent = "₹" + amount;
-    }
-
-    methodUpi.addEventListener("change", updateUI);
-    methodCod.addEventListener("change", updateUI);
-    methodQr.addEventListener("change", updateUI);
-    amountInput.addEventListener("input", updateUI);
-
-    updateUI();
-  </script>
+  <footer>
+    © 2025 WIN • सपोर्ट: <a href="https://wa.me/918816058313" style="color:inherit">8816058313</a>
+  </footer>
 </body>
 </html>
