@@ -112,7 +112,7 @@ footer a { color:#ff6b00; text-decoration:none; margin:0 10px; }
      <a href="https://ibb.co/93c6WW3s"><img src="https://i.ibb.co/wrBV44rM/41.jpg" /></a>
       <a href="https://ibb.co/CKdCJGWP"><img src="https://i.ibb.co/Wv98DJsV/image.jpg" /></a>
     <a href="https://imgbb.com/"><img src="https://i.ibb.co/RxSsNp1/IMG-20250919-WA0002.jpg" alt="IMG-20250919-WA0002" border="0" /></a>
-      <img src="https://i.ibb.co/6v9rKPk/drone-bg.jpg" alt="Drone Image 4">
+      
     </div>
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
