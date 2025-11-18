@@ -78,7 +78,7 @@
      <a href="https://ibb.co/5N9SkWd"><img src="https://i.ibb.co/RxSsNp1/IMG-20250919-WA0002.jpg" alt="IMG-20250919-WA0002" border="0"></a>
         <img src="https://images.unsplash.com/photo-1511452885604-5b0b58e3d9d9?q=80&w=800&auto=format&fit=crop" alt="Drone 4">
       </div>
-      <a href="#" class="btn">Order Now</a>
+      <a href="https://rajput1848.github.io/atyt/order.html" class="btn">Order Now</a>
     </div>
 
     <div class="card">
