@@ -138,7 +138,7 @@ footer{
 <div id="qrBox">
 <p>Scan & Pay</p>
 <!-- 👇 अपना QR IMAGE यहाँ डाल देना -->
-<img src="https://via.placeholder.com/200" width="200"><br>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/cc9btq3j/2222.jpg" alt="2222" border="0" /></a> <br>
 <input id="amt" placeholder="Enter Amount">
 <button class="btn" onclick="deposit()">Submit Request</button>
 </div>
