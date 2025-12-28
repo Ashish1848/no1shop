@@ -208,6 +208,27 @@ footer{
 <footer>
     © 2025 WIN Gaming | All Rights Reserved
 </footer>
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDA9-9l1QBb6Yjo2GC7n1C03MFyWQv-vvE",
+    authDomain: "win-gaming-e5a1e.firebaseapp.com",
+    projectId: "win-gaming-e5a1e",
+    storageBucket: "win-gaming-e5a1e.appspot.com",
+    messagingSenderId: "954150991836",
+    appId: "1:954150991836:web:417ae82eb64229af934119"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
 
 </body>
 </html>
