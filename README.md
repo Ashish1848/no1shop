@@ -133,7 +133,7 @@ footer{
 <section id="wallet" class="card">
 <h3>💰 Wallet</h3>
 <button class="btn" onclick="showQR()">➕ Deposit</button>
-<button class="btn" onclick="withdraw()">➖ Withdraw</button>
+<button class="btn" onclick="[withdraw(](https://rajput1848.github.io/atyt/payment.html))">➖ Withdraw</button>
 
 <div id="qrBox">
 <p>Scan & Pay</p>
