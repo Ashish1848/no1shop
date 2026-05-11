@@ -1,242 +1,235 @@
+
+# 🎂 Bhabhi Ji Birthday Surprise Page (HTML Code)
+
+```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WIN Gaming</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Bhabhi Ji</title>
 
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:#0b1220;
-    color:white;
-}
-header{
-    background:#020617;
-    padding:15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-header h1{margin:0;color:#22c55e}
-header span{
-    background:#16a34a;
-    padding:6px 14px;
-    border-radius:20px;
-    color:black;
-    font-weight:bold;
-}
-nav{
-    display:flex;
-    justify-content:space-around;
-    background:#020617;
-    padding:10px 0;
-}
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-}
-.container{padding:15px}
-.card{
-    background:#020617;
-    padding:15px;
-    border-radius:14px;
-    margin-bottom:15px;
-}
-.btn{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    border:none;
-    border-radius:10px;
-    background:#22c55e;
-    font-weight:bold;
-}
-input{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    border-radius:8px;
-    border:none;
-    background:#111827;
-    color:white;
-}
-.games{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-.game{
-    background:#111827;
-    padding:15px;
-    border-radius:14px;
-    text-align:center;
-}
-#loginBox{max-width:360px;margin:80px auto}
-#app{display:none}
-#qrBox{display:none;text-align:center}
-footer{
-    text-align:center;
-    padding:15px;
-    font-size:13px;
-    background:#020617;
-}
-.fixed-whatsapp{
-    position:fixed;
-    bottom:15px;
-    right:15px;
-    background:#25D366;
-    padding:12px 16px;
-    border-radius:50px;
-}
-.fixed-whatsapp a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-</style>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#ff1744,#ff4d6d,#ff758f,#ff9a8b,#fad0c4);
+      overflow:hidden;
+    }
+
+    .card{
+      width:95%;
+      max-width:360px;
+      min-height:75vh;
+      overflow:hidden;
+      max-width:420px;
+      background:white;
+      border-radius:25px;
+      padding:35px 22px;
+      text-align:center;
+      box-shadow:0 20px 50px rgba(0,0,0,0.35); border:4px solid rgba(255,255,255,0.4); backdrop-filter:blur(5px);
+      animation:float 3s ease-in-out infinite;
+      position:relative;
+      z-index:2;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-10px);}
+      100%{transform:translateY(0px);}
+    }
+
+    .heart{
+      position:absolute;
+      color:#ff1744;
+      font-size:20px;
+      animation:fall 5s linear infinite;
+      opacity:0.7;
+    }
+
+    @keyframes fall{
+      0%{
+        transform:translateY(-100px) rotate(0deg);
+      }
+      100%{
+        transform:translateY(100vh) rotate(360deg);
+      }
+    }
+
+    h1{
+      color:#ff1744;
+      font-size:34px;
+      margin-bottom:10px;
+    }
+
+    h2{
+      color:#333;
+      margin-bottom:15px;
+    }
+
+    p{
+      color:#555;
+      line-height:1.7;
+      font-size:18px;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border:none;
+      border-radius:50px;
+      background:linear-gradient(45deg,#ff1744,#ff5e78);
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(255,23,68,0.4);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+    }
+
+    .hidden-message{
+      margin-top:25px;
+      display:none;
+      animation:fade 1s ease;
+    }
+
+    @keyframes fade{
+      from{opacity:0; transform:translateY(20px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    .cake{
+      font-size:80px;
+      margin-bottom:15px;
+    }
+
+    .glow{
+      position:absolute;
+      width:200px;
+      height:200px;
+      background:rgba(255,105,180,0.25);
+      border-radius:50%;
+      top:-60px;
+      right:-60px;
+      filter:blur(40px);
+      animation:pulse 3s infinite;
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1);opacity:0.6;}
+      50%{transform:scale(1.3);opacity:1;}
+      100%{transform:scale(1);opacity:0.6;}
+    }
+
+    .special{
+      color:#ff1744;
+      font-size:22px;
+      font-weight:bold;
+    }
+  
+
+    @media(max-width:480px){
+      .card{
+        width:92%;
+        min-height:80vh;
+        border-radius:30px;
+        padding:40px 20px;
+      }
+
+      h1{
+        font-size:32px;
+      }
+
+      h2{
+        font-size:28px;
+      }
+
+      .btn{
+        width:100%;
+        padding:16px;
+        font-size:20px;
+      }
+
+      .special{
+        font-size:24px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- LOGIN -->
-<div id="loginBox" class="card">
-<h2>🔐 WIN Login</h2>
-<input id="user" placeholder="Username / Mobile">
-<input id="pass" type="password" placeholder="Password">
-<button class="btn" onclick="login()">Login</button>
-</div>
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+  </audio>
 
-<!-- APP -->
-<div id="app">
+  <div class="card">
+    <div class="glow"></div>
+    <div class="cake">🎂✨🎉💖</div>
 
-<header>
-<h1>WIN</h1>
-<span>₹ <span id="bal">500</span></span>
-</header>
+    <h1>Happy Birthday</h1>
+    <h2>Bhabhi Ji ❤️</h2>
 
-<nav>
-<a href="#games">Games</a>
-<a href="#wallet">Wallet</a>
-<a onclick="logout()">Logout</a>
-</nav>
+    <p>
+      Aaj ka din bahut special hai,
+      kyuki aaj hamari pyari Bhabhi Ji ka birthday hai ✨🎉
+      
+      Aapki smile sabko khush kar deti hai ❤️
+    </p>
 
-<div class="container">
+    <button class="btn" onclick="showMessage()">
+      Click For Magic ✨
+    </button>
 
-<section class="card">
-<h3>🔥 Trusted Real Gaming Platform</h3>
-<p>Play Games & Earn Real Money</p>
-</section>
+    <div class="hidden-message" id="msg">
+      <p class="special">
+        Bhabhi Ji ❤️
+        
+        Aap hamesha haste raho 😊
+        
+        Bhagwan aapko har khushi de 🌸
+        
+        Aapki life hamesha smile aur pyar se bhari rahe ❤️
+        
+        Aap hamare ghar ki muskan ho ❤️✨
+        
+        Aapka har din khushiyon se bhara rahe 🌸
+        
+        🎂 Happy Birthday Bhabhi Ji 🎉
+      </p>
+    </div>
+  </div>
 
-<section id="wallet" class="card">
-<h3>💰 Wallet</h3>
-<button class="btn" onclick="showQR()">➕ Deposit</button>
-<button class="btn" onclick="[withdraw(](https://rajput1848.github.io/atyt/payment.html))">➖ Withdraw</button>
+  <script>
+    function showMessage(){
+      document.getElementById('msg').style.display='block';
+    }
 
-<div id="qrBox">
-<p>Scan & Pay</p>
-<!-- 👇 अपना QR IMAGE यहाँ डाल देना -->
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/cc9btq3j/2222.jpg" alt="2222" border="0" /></a> <br>
-<input id="amt" placeholder="Enter Amount">
-<button class="btn" onclick="deposit()">Submit Request</button>
-</div>
-</section>
-
-<section id="games">
-<h3>🎮 Games</h3>
-
-<div class="games">
-<div class="game">
-✈️<br><b>Aviator</b>
-<button class="btn" onclick="aviator()">Play</button>
-</div>
-
-<div class="game">
-🎨<br><b>Color Game</b>
-<button class="btn" onclick="colorGame()">Play</button>
-</div>
-
-<div class="game">
-🎲<br><b>Dice</b>
-<button class="btn" onclick="dice()">Play</button>
-</div>
-
-<div class="game">
-🎡<br><b>Spin</b>
-<button class="btn" onclick="spin()">Play</button>
-</div>
-</div>
-
-<p id="result"></p>
-</section>
-
-</div>
-
-<footer>© 2025 WIN Gaming</footer>
-
-<div class="fixed-whatsapp">
-<a href="https://wa.me/918816058313">WhatsApp</a>
-</div>
-
-</div>
-
-<script>
-let balance = 500;
-const bal = document.getElementById("bal");
-const res = document.getElementById("result");
-
-function login(){
- document.getElementById("loginBox").style.display="none";
- document.getElementById("app").style.display="block";
-}
-
-function logout(){
- location.reload();
-}
-
-function update(){ bal.innerText = balance }
-
-function showQR(){
- document.getElementById("qrBox").style.display="block";
-}
-
-function deposit(){
- alert("Deposit request sent ₹"+amt.value+"\n(Admin approval pending)");
-}
-
-function withdraw(){
- alert("Withdraw request sent");
-}
-
-function aviator(){
- let m=(Math.random()*3+1).toFixed(2);
- balance+=20;
- res.innerText="✈️ Crash at "+m+"x | +₹20";
- update();
-}
-
-function colorGame(){
- if(Math.random()>0.5){balance+=10;res.innerText="🎨 You Won +₹10";}
- else{balance-=10;res.innerText="🎨 You Lost -₹10";}
- update();
-}
-
-function dice(){
- let d=Math.floor(Math.random()*6)+1;
- balance+=d;
- res.innerText="🎲 Dice "+d+" | +₹"+d;
- update();
-}
-
-function spin(){
- let p=Math.floor(Math.random()*50);
- balance+=p;
- res.innerText="🎡 Spin Won ₹"+p;
- update();
-}
-</script>
+    // Floating hearts and sparkles
+    for(let i=0;i<25;i++){
+      let heart=document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML='❤';
+      heart.style.left=Math.random()*100+'vw';
+      heart.style.animationDuration=(Math.random()*3+2)+'s';
+      heart.style.fontSize=(Math.random()*20+15)+'px';
+      document.body.appendChild(heart);
+    }
+  </script>
 
 </body>
 </html>
+```
+
+
