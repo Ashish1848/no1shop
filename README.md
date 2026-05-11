@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -6,15 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Bhabhi Ji</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -22,130 +19,93 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
     background:linear-gradient(135deg,#ff0080,#ff4d6d,#ffb703);
-}
-
-/* PHONE SIZE CARD */
-
-.phone{
-    width:340px;
-    height:690px;
-    background:rgba(255,255,255,0.12);
-    border-radius:40px;
-    border:4px solid rgba(255,255,255,0.3);
-    backdrop-filter:blur(12px);
-    box-shadow:0 0 40px rgba(0,0,0,0.4);
-    position:relative;
     overflow:hidden;
+}
+
+/* MAIN CARD */
+
+.card{
+    width:90%;
+    max-width:340px;
     padding:30px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
     text-align:center;
-    animation:float 3s ease-in-out infinite;
+    color:white;
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+    animation:updown 3s infinite ease-in-out;
 }
 
-/* TOP CAMERA */
-
-.camera{
-    width:120px;
-    height:25px;
-    background:#111;
-    border-radius:20px;
-    position:absolute;
-    top:10px;
-    left:50%;
-    transform:translateX(-50%);
-}
+/* TITLE */
 
 h1{
-    margin-top:70px;
-    color:white;
-    font-size:38px;
-    text-shadow:0 0 15px white;
+    font-size:32px;
+    margin-bottom:10px;
 }
 
 h2{
+    font-size:28px;
     color:#fff700;
-    margin-top:10px;
-    font-size:30px;
+    margin-bottom:20px;
 }
+
+/* IMAGE */
 
 img{
-    width:180px;
-    height:180px;
+    width:140px;
+    height:140px;
     border-radius:50%;
-    margin-top:25px;
-    border:5px solid white;
+    border:4px solid white;
     object-fit:cover;
-    box-shadow:0 0 25px rgba(255,255,255,0.7);
+    margin-bottom:20px;
 }
+
+/* TEXT */
 
 p{
-    color:white;
-    margin-top:25px;
     font-size:18px;
-    line-height:32px;
+    line-height:30px;
 }
 
+/* BUTTON */
+
 button{
-    margin-top:35px;
-    padding:16px 35px;
+    margin-top:25px;
+    padding:14px 28px;
     border:none;
-    border-radius:50px;
+    border-radius:40px;
     background:white;
     color:#ff0080;
-    font-size:20px;
+    font-size:18px;
     font-weight:bold;
     cursor:pointer;
-    transition:0.4s;
-    box-shadow:0 0 20px rgba(255,255,255,0.6);
+    transition:0.3s;
 }
 
 button:hover{
-    transform:scale(1.08);
+    transform:scale(1.05);
     background:#fff700;
-    color:#000;
-}
-
-/* FLOAT ANIMATION */
-
-@keyframes float{
-    0%{transform:translateY(0px);}
-    50%{transform:translateY(-8px);}
-    100%{transform:translateY(0px);}
+    color:black;
 }
 
 /* HEARTS */
 
 .hearts span{
     position:absolute;
-    color:white;
-    font-size:22px;
-    animation:hearts 10s linear infinite;
-    bottom:-100px;
+    bottom:-50px;
+    font-size:24px;
+    animation:heart 8s linear infinite;
 }
 
-.hearts span:nth-child(1){
-    left:10%;
-    animation-delay:0s;
-}
-.hearts span:nth-child(2){
-    left:30%;
-    animation-delay:2s;
-}
-.hearts span:nth-child(3){
-    left:50%;
-    animation-delay:4s;
-}
-.hearts span:nth-child(4){
-    left:70%;
-    animation-delay:1s;
-}
-.hearts span:nth-child(5){
-    left:90%;
-    animation-delay:3s;
-}
+.hearts span:nth-child(1){left:10%; animation-delay:0s;}
+.hearts span:nth-child(2){left:30%; animation-delay:2s;}
+.hearts span:nth-child(3){left:50%; animation-delay:4s;}
+.hearts span:nth-child(4){left:70%; animation-delay:1s;}
+.hearts span:nth-child(5){left:90%; animation-delay:3s;}
 
-@keyframes hearts{
+@keyframes heart{
     0%{
         transform:translateY(0) scale(0);
         opacity:1;
@@ -156,39 +116,43 @@ button:hover{
     }
 }
 
+/* FLOAT */
+
+@keyframes updown{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="phone">
+<div class="hearts">
+    <span>💖</span>
+    <span>🎂</span>
+    <span>✨</span>
+    <span>💝</span>
+    <span>❤</span>
+</div>
 
-    <div class="camera"></div>
-
-    <div class="hearts">
-        <span>💖</span>
-        <span>🎂</span>
-        <span>✨</span>
-        <span>💝</span>
-        <span>❤</span>
-    </div>
+<div class="card">
 
     <h1>🎉 Happy Birthday 🎉</h1>
 
     <h2>Bhabhi Ji 💖</h2>
 
-    <!-- PHOTO -->
-    <img src="https://i.ibb.co/7QpKsCX/girl.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
 
     <p>
-        Aap hamare ghar ki<br>
-        sabse pyari मुस्कान हो 😊<br><br>
-
-        Bhagwan kare aapki har<br>
-        wish puri ho ✨
+        Aap hamesha haste raho 😊<br>
+        Aapki har wish puri ho ✨<br><br>
+        Bhagwan aapko duniya ki<br>
+        saari khushiyan de 💝
     </p>
 
-    <button onclick="wish()">
+    <button onclick="showWish()">
         Click Here 🎁
     </button>
 
@@ -196,9 +160,9 @@ button:hover{
 
 <script>
 
-function wish(){
+function showWish(){
 
-    alert("💖 Dear Bhabhi Ji 💖\n\nAap hamesha khush raho 😊\n\nHappy Birthday 🎂✨");
+    alert("💖 Dear Bhabhi Ji 💖\n\nAap hamare ghar ki sabse special ho 😊\n\nHappy Birthday 🎂✨");
 
 }
 
