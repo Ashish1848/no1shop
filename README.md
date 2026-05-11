@@ -1,7 +1,5 @@
 
-# 🎂 Bhabhi Ji Birthday Surprise Page (HTML Code)
-
-```html
+# 🎂 Bhabhi Ji Birthday Surprise Page (HTML Code)html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
