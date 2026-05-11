@@ -1,111 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Bhabhi Ji</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhabhi Ji Birthday Surprise</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    body{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:linear-gradient(135deg,#ff1744,#ff4d6d,#ff758f,#ff9a8b,#fad0c4);
-      overflow:hidden;
-    }
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff0080,#ff8c00,#ffd700);
+}
 
-    .card{
-      width:95%;
-      max-width:360px;
-      min-height:75vh;
-      overflow:hidden;
-      max-width:420px;
-      background:white;
-      border-radius:25px;
-      padding:35px 22px;
-      text-align:center;
-      box-shadow:0 20px 50px rgba(0,0,0,0.35); border:4px solid rgba(255,255,255,0.4); backdrop-filter:blur(5px);
-      animation:float 3s ease-in-out infinite;
-      position:relative;
-      z-index:2;
-    }
+.card{
+    position:relative;
+    width:350px;
+    height:500px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    border:2px solid rgba(255,255,255,0.3);
+    box-shadow:0 0 30px rgba(0,0,0,0.3);
+    text-align:center;
+    padding:30px;
+    color:white;
+    overflow:hidden;
+    animation:float 3s ease-in-out infinite;
+}
 
-    @keyframes float{
-      0%{transform:translateY(0px);}
-      50%{transform:translateY(-10px);}
-      100%{transform:translateY(0px);}
-    }
+.card::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,255,255,0.1);
+    border-radius:50%;
+    top:-250px;
+    left:-100px;
+}
 
-    .heart{
-      position:absolute;
-      color:#ff1744;
-      font-size:20px;
-      animation:fall 5s linear infinite;
-      opacity:0.7;
-    }
+h1{
+    font-size:40px;
+    margin-top:40px;
+    text-shadow:0 0 10px #fff;
+}
 
-    @keyframes fall{
-      0%{
-        transform:translateY(-100px) rotate(0deg);
-      }
-      100%{
-        transform:translateY(100vh) rotate(360deg);
-      }
-    }
+h2{
+    font-size:28px;
+    margin-top:15px;
+    color:#fff700;
+}
 
-    h1{
-      color:#ff1744;
-      font-size:34px;
-      margin-bottom:10px;
-    }
+p{
+    margin-top:25px;
+    font-size:18px;
+    line-height:30px;
+}
 
-    h2{
-      color:#333;
-      margin-bottom:15px;
-    }
+button{
+    margin-top:35px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff0080;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.4s;
+}
 
-    p{
-      color:#555;
-      line-height:1.7;
-      font-size:18px;
-      margin-bottom:20px;
-    }
+button:hover{
+    transform:scale(1.1);
+    background:#fff700;
+}
 
-    .btn{
-      padding:14px 28px;
-      border:none;
-      border-radius:50px;
-      background:linear-gradient(45deg,#ff1744,#ff5e78);
-      color:white;
-      font-size:18px;
-      cursor:pointer;
-      transition:0.3s;
-      box-shadow:0 8px 20px rgba(255,23,68,0.4);
-    }
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0px);}
+}
 
-    .btn:hover{
-      transform:scale(1.08);
-    }
+.hearts{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:-1;
+}
 
-    .hidden-message{
-      margin-top:25px;
-      display:none;
-      animation:fade 1s ease;
-    }
+.hearts span{
+    position:absolute;
+    display:block;
+    color:white;
+    font-size:25px;
+    animation:animate 10s linear infinite;
+}
 
-    @keyframes fade{
-      from{opacity:0; transform:translateY(20px);}
-      to{opacity:1; transform:translateY(0);}
+@keyframes animate{
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:1;
     }
+    100%{
+        transform:translateY(-100vh) scale(1.5);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+    <span style="left:10%; animation-delay:0s;">❤</span>
+    <span style="left:25%; animation-delay:2s;">💖</span>
+    <span style="left:40%; animation-delay:4s;">✨</span>
+    <span style="left:55%; animation-delay:1s;">🎂</span>
+    <span style="left:70%; animation-delay:3s;">💝</span>
+    <span style="left:85%; animation-delay:5s;">❤</span>
+</div>
+
+<div class="card">
+
+    <h1>🎉 Happy Birthday 🎉</h1>
+
+    <h2>Bhabhi Ji 💖</h2>
+
+    <p>
+        Aap hamesha haste raho 😊<br>
+        Aapki har wish puri ho ✨<br><br>
+        Bhagwan aapko duniya ki<br>
+        saari khushiyan de 💝
+    </p>
+
+    <button onclick="showMessage()">
+        Click Here 🎁
+    </button>
+
+</div>
+
+<script>
+function showMessage(){
+    alert("💖 Dear Bhabhi Ji 💖\n\nAap is duniya ki sabse pyari aur special Bhabhi ho 😊\n\nHappy Birthday Once Again 🎂✨");
+}
+</script>
+
+</body>
+</html>    }
 
     .cake{
       font-size:80px;
